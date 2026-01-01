@@ -43,3 +43,22 @@ body{
 .userflash{
     background-color: aqua;
 }
+
+.start{
+    background-color: red;
+    color: white;
+    padding: 0.7rem;
+    font-size: 16px;
+    border-radius: 20%;
+    border: none;
+     box-shadow: 4px 12px 18px black;
+     cursor: pointer;
+     margin: 8px;
+}
+
+.start:hover{
+    background-color: green;
+}
+/* .reset:hover{
+    background-color: green;
+} */

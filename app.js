@@ -14,16 +14,21 @@ let btns = ["red", "green", "yellow", "blue"];
 let started = false;
 let level = 0;
 let h2 = document.querySelector("h2");
-let h3 = document.querySelector("h3");
+let startBtn = document.querySelector(".start");
+// let resetBtn = document.querySelector(".reset");
 
-document.addEventListener("keypress", function () {
-    if (started == false) {
+startBtn.addEventListener("click", startGame);
+// resetBtn.addEventListener("click", reset);
+
+function startGame(){
+if (started == false) {
         console.log("Game started");
         started = true;
         levelUp();
     }
-
-});
+    // reset();
+    
+}
 
 function gameFlash(btn) {
     btn.classList.add("flash");
@@ -76,7 +81,7 @@ function checkAns(idx) {
     }
     else {
         playSound("wrong");
-        h2.innerHTML = `Game over! Your Score was <b>${level}</b> <br> Press any key to Start`;
+        h2.innerHTML = `Game over! Your Score was <b>${level}</b> <br> Click on start for new Game`;
         document.querySelector("body").style.backgroundColor = "red";
         setTimeout(function () {
 
@@ -116,3 +121,5 @@ function playSound(color) {
     sounds[color].currentTime = 0; // fast replay
     sounds[color].play();
 }
+
+
